@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-url = 'http://www.vilniausfutbolas.lt/turnyrine-lentele/20?comp_id=37'
+url = 'http://www.vilniausfutbolas.lt/lyga/III-Lyga/20'
 
 response = requests.get(url)
 if response.status_code == 200: 
@@ -11,6 +11,8 @@ if response.status_code == 200:
 
     with open('output.html', 'wb') as file:  # Use 'wb' for binary write mode
         file.write(html_content)
+
+    
 
 else:
     print('Request failed with status code:', response.status_code) 
