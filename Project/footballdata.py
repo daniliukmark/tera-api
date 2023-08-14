@@ -56,6 +56,3 @@ class FootballData:
         except:
             return print('Json string cannot be serialized. Response status is not 200')
             
-
-my_url = FootballData()
-my_url.save_data()
