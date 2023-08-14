@@ -2,13 +2,13 @@
     {
         "Vieta": "1",
         "Komanda": "FK Granitas",
-        "Rungtynės": "9",
+        "Rungtynės": "10",
         "Pergalės": "7",
         "Lygiosios": "0",
-        "Pralaimėjimai": "2",
-        "Įmušta": "23",
-        "Praleista": "4",
-        "Skirtumas": "+19",
+        "Pralaimėjimai": "3",
+        "Įmušta": "24",
+        "Praleista": "6",
+        "Skirtumas": "+18",
         "Taškai": "21"
     },
     {
@@ -61,6 +61,18 @@
     },
     {
         "Vieta": "6",
+        "Komanda": "AFK",
+        "Rungtynės": "11",
+        "Pergalės": "4",
+        "Lygiosios": "4",
+        "Pralaimėjimai": "3",
+        "Įmušta": "16",
+        "Praleista": "18",
+        "Skirtumas": "-2",
+        "Taškai": "16"
+    },
+    {
+        "Vieta": "7",
         "Komanda": "ESFA-Versmė",
         "Rungtynės": "10",
         "Pergalės": "5",
@@ -72,7 +84,7 @@
         "Taškai": "15"
     },
     {
-        "Vieta": "7",
+        "Vieta": "8",
         "Komanda": "FC Vova",
         "Rungtynės": "10",
         "Pergalės": "4",
@@ -81,18 +93,6 @@
         "Įmušta": "18",
         "Praleista": "24",
         "Skirtumas": "-6",
-        "Taškai": "13"
-    },
-    {
-        "Vieta": "8",
-        "Komanda": "AFK",
-        "Rungtynės": "10",
-        "Pergalės": "3",
-        "Lygiosios": "4",
-        "Pralaimėjimai": "3",
-        "Įmušta": "14",
-        "Praleista": "17",
-        "Skirtumas": "-3",
         "Taškai": "13"
     },
     {
