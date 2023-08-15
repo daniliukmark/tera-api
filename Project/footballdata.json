@@ -2,6 +2,7 @@
     {
         "Vieta": "1",
         "Komanda": "FK Granitas",
+        "Logo": "fk-granitas",
         "Rungtynės": "10",
         "Pergalės": "7",
         "Lygiosios": "0",
@@ -14,6 +15,7 @@
     {
         "Vieta": "2",
         "Komanda": "Širvintos-VGTU-Vilkai",
+        "Logo": "širvintos-vgtu-vilkai",
         "Rungtynės": "10",
         "Pergalės": "7",
         "Lygiosios": "0",
@@ -26,6 +28,7 @@
     {
         "Vieta": "3",
         "Komanda": "FK Medžiai",
+        "Logo": "fk-medžiai",
         "Rungtynės": "10",
         "Pergalės": "6",
         "Lygiosios": "2",
@@ -38,6 +41,7 @@
     {
         "Vieta": "4",
         "Komanda": "FK Tera",
+        "Logo": "fk-tera",
         "Rungtynės": "10",
         "Pergalės": "6",
         "Lygiosios": "1",
@@ -50,6 +54,7 @@
     {
         "Vieta": "5",
         "Komanda": "Ataka",
+        "Logo": "ataka",
         "Rungtynės": "9",
         "Pergalės": "5",
         "Lygiosios": "2",
@@ -62,6 +67,7 @@
     {
         "Vieta": "6",
         "Komanda": "AFK",
+        "Logo": "afk",
         "Rungtynės": "11",
         "Pergalės": "4",
         "Lygiosios": "4",
@@ -74,6 +80,7 @@
     {
         "Vieta": "7",
         "Komanda": "ESFA-Versmė",
+        "Logo": "esfa-versmė",
         "Rungtynės": "10",
         "Pergalės": "5",
         "Lygiosios": "0",
@@ -86,6 +93,7 @@
     {
         "Vieta": "8",
         "Komanda": "FC Vova",
+        "Logo": "fc-vova",
         "Rungtynės": "10",
         "Pergalės": "4",
         "Lygiosios": "1",
@@ -98,6 +106,7 @@
     {
         "Vieta": "9",
         "Komanda": "FK Navigatoriai",
+        "Logo": "fk-navigatoriai",
         "Rungtynės": "10",
         "Pergalės": "4",
         "Lygiosios": "0",
@@ -110,6 +119,7 @@
     {
         "Vieta": "10",
         "Komanda": "VJFK Trakai",
+        "Logo": "vjfk-trakai",
         "Rungtynės": "10",
         "Pergalės": "2",
         "Lygiosios": "0",
@@ -122,6 +132,7 @@
     {
         "Vieta": "11",
         "Komanda": "FK Geležinis Vilkas",
+        "Logo": "fk-geležinis-vilkas",
         "Rungtynės": "10",
         "Pergalės": "0",
         "Lygiosios": "0",

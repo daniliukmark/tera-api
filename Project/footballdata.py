@@ -38,7 +38,6 @@ class FootballData:
             return      
         headings = []
         rows = []
-        
         for th_elements in target_table.find_all('th'):
             headings.append(th_elements.text)
         for tr_blocks in target_table.find_all('tr')[1:]:
@@ -93,5 +92,3 @@ class FootballData:
         except:
             return print('Json string cannot be serialized. Go to the link and check whether the table is there')
             
-my_obj = FootballData()
-print(my_obj.get_data())
