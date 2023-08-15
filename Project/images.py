@@ -16,7 +16,7 @@ if table:
         a_tag = tr_block.find('a')
         if a_tag:
             img_tag = a_tag.find('img')
-            if img_tag: #and img_tag.has.attr('src'):
+            if img_tag: #and img_tag.has.attr('src'): #Specify a certain td block in html
                 img_src = a_tag.img['src']
             #img_text = a_tag.get_text(strip=True).lower().replace(' ', '-')
                 print(img_src)
