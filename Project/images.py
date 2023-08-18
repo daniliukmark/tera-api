@@ -1,6 +1,11 @@
 from bs4 import BeautifulSoup
 import requests
 import os
+from rembg import remove
+from PIL import Image
+
+output_dir = "logo_images"
+os.makedirs(output_dir, exist_ok=True)
 
 url = 'http://www.vilniausfutbolas.lt/turnyrine-lentele/20?comp_id=37'
 xresponse = requests.get(url)
@@ -16,10 +21,17 @@ if table:
         a_tag = tr_block.find('a')
         if a_tag:
             img_tag = a_tag.find('img')
-            if img_tag: #and img_tag.has.attr('src'): #Specify a certain td block in html
+            if img_tag: 
                 img_src = a_tag.img['src']
-            #img_text = a_tag.get_text(strip=True).lower().replace(' ', '-')
+                img_text = a_tag.get_text(strip=True).lower().replace(' ', '-')
                 print(img_src)
+                print(img_text)
+                
+
+                #save image to a directory, directory created above
+
+#Save image names to name the images during saving
+#
 #            
 # GET THE LINKS ONLY
 # # #    
