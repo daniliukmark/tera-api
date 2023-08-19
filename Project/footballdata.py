@@ -1,18 +1,25 @@
+import dotenv
+import os
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup 
 import json
 
+dotenv.load_dotenv()
+FOOTBALL_WEBSITE_URL= os.environ.get("FOOTBALL_WEBSITE_URL")
 
-class FootballData:
-    
-    main_url = 'http://www.vilniausfutbolas.lt/lyga/III-lyga/20'
+class StandingsData:
+    def __init__(self, web_url):
+        self.web_url = web_url
+        self.standings_table = self.get_table()
     
     def get_target_url(self):
-        first_response = requests.get(self.main_url)
-        if first_response.status_code != 200:
-            print('Request failed with status code:', first_response.status_code)
+        response_html = requests.get(self.web_url)
+
+        if response_html.status_code != 200:
+            print('Request failed with status code:', response_html.status_code)
             return
-        soup = BeautifulSoup(first_response.content, 'html.parser')
+        
+        soup = BeautifulSoup(response_html.content, 'html.parser')
         for link in soup.select('a[href*="turnyrine-lentel"]'):        
             return link['href']
 
@@ -20,27 +27,40 @@ class FootballData:
         target_url = self.get_target_url()
         if target_url is None:
             return
-        final_response = requests.get(target_url)
-        if final_response.status_code != 200:
-            print('Final request failed with status code:', final_response.status_code)
+        response_html = requests.get(target_url)
+        if response_html.status_code != 200:
+            print('Final request failed with status code:', response_html.status_code)
             return
-        soup = BeautifulSoup(final_response.content, 'html.parser')
-        table = soup.find('table', class_='standings')
-        if table:
-            return table
-        else: 
-            print("Table's location has changed")
-            return
+        soup = BeautifulSoup(response_html.content, 'html.parser')
+        standings_table = soup.find('table', class_='standings')
+        
+        if standings_table:
+            return standings_table
+        else:
+            raise Exception("Table has not been found by class 'standings': Table does not exist on on that web-page" )
     
     def format_data(self):
-        target_table = self.get_table()
-        if target_table is None:
-            return      
+        
+        # if None: wolud return in  
+        # if standings_table:
+        #     return standings_table
+        # else: 
+        #     print("Table's location has changed")
+        #     return"
+        #
+        # So code should be written as an Exeption
+        # like:
+        # raise Exception("Table has not been found by class 'standings': Table does not exist on on that web-page" )
+        # 
+        # if standings_table is None: 
+        #     return      
+        # also standings_table says more about content than target_table, you can use words describing content more if it is helpful
+
         headings = []
         rows = []
-        for th_elements in target_table.find_all('th'):
+        for th_elements in self.standings_table.find_all('th'):
             headings.append(th_elements.text)
-        for tr_blocks in target_table.find_all('tr')[1:]:
+        for tr_blocks in self.standings_table.find_all('tr')[1:]:
             seperated_rows = []
             for td_blocks in tr_blocks.find_all('td'):
                 seperated_rows.append(td_blocks.text.strip())
@@ -58,8 +78,7 @@ class FootballData:
 
     #Create a list of images and save images in a distinct file
     def get_logo(self):
-        target_table = self.get_table()
-        if target_table is None:
+        if self.standings_table is None:
             return 
         target_url = self.get_target_url()
         if target_url is None:
@@ -67,7 +86,7 @@ class FootballData:
         target_response = requests.get(target_url)
         if target_response.status_code != 200:
             return
-        for tr_blocks in target_table.find_all('tr')[1:]:
+        for tr_blocks in self.standings_table.find_all('tr')[1:]:
             pass      
 
 
@@ -75,7 +94,7 @@ class FootballData:
     def get_data(self):
         try: 
             headings, rows = self.format_data()
-            my_lst = []
+            my_lst = [] # is my_list suitable name? maybe
             for row in rows: 
                 combined = dict(zip(headings, row))
                 my_lst.append(combined)
